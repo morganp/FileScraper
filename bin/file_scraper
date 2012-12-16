@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+require 'pp'
+
+begin
+  require_relative File.join('..', 'lib', 'file_scraper')
+rescue
+  # Ruby 1.8 Falls back here
+  require 'rubygems'
+
+  $LOAD_PATH.unshift File.join( File.dirname(__FILE__), '..', 'lib')
+  require 'file_scraper'
+end
+require 'slop'
+
+  opts = Slop.parse do
+    on :q, :quiet,   'No Output, for use with cron', true
+    on     :rss=,    'RSS Feed', :argument => true
+    on     :search=, 'File or URL containing array of regexp for matching downloads' 
+    on     :block=,  'File or URL containing array of regexp for blocking downloads' 
+    on :d, :dir=,    'Download Location'
+  end
+  options = opts.to_hash
+
+  # This was not working correctly in the to_hash
+  options[:quiet] = opts.quiet?
+
+unless options[:rss].nil?  
+  rss_data = FileScraper::Feed.fetch( options[:rss] )
+  filter   = FileScraper::Filter.new(rss_data,  options[:dir], options[:search], options[:block], options)
+  filter.run
+else
+  puts " option --rss=http:// is required" 
+  puts opts.help
+end
+
