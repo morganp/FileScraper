@@ -27,7 +27,8 @@ require 'slop'
 unless options[:rss].nil?  
   rss_data = FileScraper::Feed.fetch( options[:rss] )
   filter   = FileScraper::Filter.new(rss_data,  options[:dir], options[:search], options[:block], options)
-  filter.run
+  filtered_data = filter.run
+  FileScraper::Download.run( filtered_data, options[:dir])
 else
   puts " option --rss=http:// is required" 
   puts opts.help

@@ -9,9 +9,11 @@ end
   require 'httpclient'
 
 begin
-  require_relative 'file_scraper/filter'
   require_relative 'file_scraper/feed'
+  require_relative 'file_scraper/filter'
+  require_relative 'file_scraper/download'
 rescue
-  require 'file_scraper/filter'
   require 'file_scraper/feed'
+  require 'file_scraper/filter'
+  require 'file_scraper/download'
 end

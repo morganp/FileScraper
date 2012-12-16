@@ -18,11 +18,17 @@ module FileScraper
     end
 
     def run
-      ## TODO implement filters
+      matched_data = Array.new
       @rss_data.items.each do |item|
+
+        ## TODO implement filters
+        matched_data << item
+
         name          = "#{item.title}" #This does not include fileextension
         puts name
       end 
+
+      return matched_data
     end
   end
 end
