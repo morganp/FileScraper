@@ -38,7 +38,7 @@ unless options[:rss].nil?
   
   FileScraper::Download.run( rss_data, options[:dir])
 else
-  puts " option --rss=http:// is required" 
+  puts " option '--rss feed' is required" 
   puts opts.help
 end
 
