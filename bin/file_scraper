@@ -14,8 +14,8 @@ require 'slop'
 
   opts = Slop.parse do
     on :q, :quiet,   'No Output, for use with cron', true
-    on     :rss=,    'RSS Feed', :argument => true
-    on     :search=, 'File or URL containing array of regexp for matching downloads' 
+    on     :rss=,    'RSS Feed', :optional => false
+    on     :search=, 'File or URL containing array of regexp for matching downloads', :as => Array
     on     :block=,  'File or URL containing array of regexp for blocking downloads' 
     on :d, :dir=,    'Download Location'
   end
@@ -26,9 +26,17 @@ require 'slop'
 
 unless options[:rss].nil?  
   rss_data = FileScraper::Feed.fetch( options[:rss] )
-  filter   = FileScraper::Filter.new(rss_data,  options[:dir], options[:search], options[:block], options)
-  filtered_data = filter.run
-  FileScraper::Download.run( filtered_data, options[:dir])
+
+  # Default to empty Array
+  options[:search] ||= [] 
+  
+  # Iterate over all the supplied filters
+  options[:search].each do |filter_item|
+    filter   = FileScraper::Filter.new(rss_data,  options[:dir], filter_item, options[:block], options)
+    rss_data = filter.run
+  end
+  
+  FileScraper::Download.run( rss_data, options[:dir])
 else
   puts " option --rss=http:// is required" 
   puts opts.help

@@ -12,7 +12,9 @@ module FileScraper
       open( source ) do |s| content = s.read end
       rss = RSS::Parser.parse(content, false)
       
-      return rss
+      ## Return items (to allow chaining filters)
+      ##   
+      return rss.items
     end 
 
     def self.list( data )
