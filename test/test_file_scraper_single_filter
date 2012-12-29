@@ -1,0 +1,6 @@
+#!/bin/sh
+BaseDir=$(dirname $(which ${0}))
+
+DOWNLOAD_FOLDER="./downloads"
+
+../bin/file_scraper --rss ./fixtures/rss_test2.xml --search search1.txt --dir $DOWNLOAD_FOLDER

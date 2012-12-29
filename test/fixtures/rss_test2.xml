@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+          <channel>
+            <title>RSS Syndicator</title>
+            <link></link>
+            <description>Generic RSS Feed</description>
+            <language>en-US</language><image>
+              <title>RSS Syndicator</title>
+              <url></url>
+              <link></link>
+              <width>100</width>
+              <height>30</height>
+              <description>RSS Syndicator</description>
+            </image>      <copyright>Copyright &amp;copy; 2012</copyright>
+            <webMaster>support@example.com</webMaster> 
+            <lastBuildDate>Sun, 16 Dec 2012 17:20:07 0</lastBuildDate>
+            <ttl>20</ttl>
+            <generator>RSS Syndicator</generator>
+  <item>
+		<title>One A</title>
+		<description>One A Description</description>
+		<link>https://gist.github.com/raw/4310046/c5bbd0adc4bf1d97d825e3c376ed408fde22340f/generic_file</link>
+		<author>Anon</author>
+		<category>Blank</category>
+		<pubDate>2012-12-16 18:13:07</pubDate>
+  </item>
+  <item>
+		<title>Two A</title>
+		<description>Two A Description</description>
+		<link>https://gist.github.com/raw/4310046/c5bbd0adc4bf1d97d825e3c376ed408fde22340f/generic_file</link>
+		<author>Anon</author>
+		<category>Blank</category>
+		<pubDate>2012-12-16 18:13:07</pubDate>
+  </item>
+  <item>
+		<title>Three A</title>
+		<description>Three A Description</description>
+		<link>https://gist.github.com/raw/4310046/c5bbd0adc4bf1d97d825e3c376ed408fde22340f/generic_file</link>
+		<author>Anon</author>
+		<category>Blank</category>
+		<pubDate>2012-12-16 18:13:07</pubDate>
+  </item>
+  <item>
+		<title>One B</title>
+		<description>One B Description</description>
+		<link>https://gist.github.com/raw/4310046/c5bbd0adc4bf1d97d825e3c376ed408fde22340f/generic_file</link>
+		<author>Anon</author>
+		<category>Blank</category>
+		<pubDate>2012-12-16 18:13:07</pubDate>
+  </item>
+  <item>
+		<title>Two B</title>
+		<description>Two B Description</description>
+		<link>https://gist.github.com/raw/4310046/c5bbd0adc4bf1d97d825e3c376ed408fde22340f/generic_file</link>
+		<author>Anon</author>
+		<category>Blank</category>
+		<pubDate>2012-12-16 18:13:07</pubDate>
+  </item>
+  <item>
+		<title>Three B</title>
+		<description>Three B Description</description>
+		<link>https://gist.github.com/raw/4310046/c5bbd0adc4bf1d97d825e3c376ed408fde22340f/generic_file</link>
+		<author>Anon</author>
+		<category>Blank</category>
+		<pubDate>2012-12-16 18:13:07</pubDate>
+  </item>
+</channel></rss>
