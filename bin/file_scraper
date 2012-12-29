@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require 'pp'
 
 begin
   require_relative File.join('..', 'lib', 'file_scraper')
